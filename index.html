@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: 'Cairo', sans-serif;
-      background: linear-gradient(to right, #b3e5fc, #0288d1); /* خلفية زرقاء متدرجة */
+      background: linear-gradient(to right, #e1bee7, #ede7f6); /* بنفسجي فاتح */
       margin: 0;
       padding: 0;
       color: #333;
@@ -19,23 +19,23 @@
       background-color: #fff;
       border-radius: 15px;
       padding: 30px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       text-align: center;
     }
 
     .logo {
-      width: 220px;
+      width: 200px;
       margin-bottom: 25px;
     }
 
     h2 {
-      color: #01579b;
+      color: #6a1b9a;
       margin-bottom: 20px;
       font-size: 26px;
     }
 
     .highlight {
-      background-color: #e1f5fe;
+      background-color: #f3e5f5;
       padding: 15px;
       border-radius: 10px;
       font-size: 20px;
@@ -53,15 +53,13 @@
 
     .app-item {
       width: 100px;
-      text-align: center;
     }
 
     .app-item img {
-      width: 100px;
+      width: 100%;
       height: 100px;
       object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
     }
 
     .app-item p {
@@ -70,10 +68,10 @@
       font-weight: 600;
     }
 
-    .app-item:nth-child(1) p { color: red; } /* سينمانا */
-    .app-item:nth-child(2) p { color: #9c27b0; } /* فودو */
-    .app-item:nth-child(3) p { color: red; }     /* سينما بوكس */
-    .app-item:nth-child(4) p { color: #4caf50; } /* المنصة */
+    .app-item:nth-child(1) p { color: #9c27b0; } /* سينمانا */
+    .app-item:nth-child(2) p { color: #388e3c; } /* فودو */
+    .app-item:nth-child(3) p { color: red; }      /* سينما بوكس */
+    .app-item:nth-child(4) p { color: #ff5722; }  /* المنصة */
 
     .barcode-row {
       display: flex;
@@ -101,19 +99,19 @@
     .barcode-box p {
       font-size: 17px;
       font-weight: bold;
-      color: #2e7d32;
+      color: #4a148c;
       line-height: 1.6;
     }
 
     .contact-block {
-      background-color: #e1f5fe;
+      background-color: #ede7f6;
       padding: 18px 25px;
       border-radius: 12px;
       margin: 25px auto;
       width: fit-content;
       font-size: 18px;
       font-weight: bold;
-      color: #01579b;
+      color: #4a148c;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     }
 
@@ -151,6 +149,35 @@
       transform: translateY(-2px);
     }
 
+    /* جدول الاشتراكات */
+    .subscriptions {
+      margin-top: 40px;
+    }
+
+    .subscriptions h3 {
+      font-size: 22px;
+      color: #6a1b9a;
+      margin-bottom: 20px;
+    }
+
+    .plans-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .plan-box {
+      background-color: #f3e5f5;
+      border-radius: 12px;
+      padding: 15px 20px;
+      width: 130px;
+      font-size: 18px;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      color: #4a148c;
+    }
+
     @media (max-width: 600px) {
       .barcode-row {
         flex-direction: column;
@@ -163,6 +190,11 @@
 
       .app-item {
         width: 80px;
+      }
+
+      .plan-box {
+        width: 100px;
+        font-size: 16px;
       }
     }
   </style>
@@ -182,7 +214,7 @@
     🎉 تدعم كل التطبيقات الترفيهية بدون VPN
   </div>
 
-  <!-- تطبيقات مدعومة -->
+  <!-- التطبيقات -->
   <div class="apps-grid">
     <div class="app-item">
       <img src="https://megaupp.com/wp-content/uploads/2022/04/cinemana-thumb-megaupp.jpg" alt="سينمانا">
@@ -202,7 +234,7 @@
     </div>
   </div>
 
-  <!-- باركودات الدفع -->
+  <!-- باركودات -->
   <div class="barcode-row">
     <div class="barcode-box">
       <img src="ZainCard.jpg" alt="ماستر كارد">
@@ -220,7 +252,7 @@
     رائد نت 📞 07721372326
   </div>
 
-  <!-- أزرار واتساب -->
+  <!-- واتساب -->
   <div class="buttons">
     <a class="whatsapp-button" href="https://wa.me/9647714064135" target="_blank">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب">
@@ -230,6 +262,19 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب">
       تواصل مع رائد نت
     </a>
+  </div>
+
+  <!-- جدول الاشتراكات -->
+  <div class="subscriptions">
+    <h3>أنواع الاشتراكات المتوفرة:</h3>
+    <div class="plans-grid">
+      <div class="plan-box">خط 35,000 IQD</div>
+      <div class="plan-box">خط 50,000 IQD</div>
+      <div class="plan-box">خط 60,000 IQD</div>
+      <div class="plan-box">خط 75,000 IQD</div>
+      <div class="plan-box">خط 95,000 IQD</div>
+      <div class="plan-box">خط 115,000 IQD</div>
+    </div>
   </div>
 
 </div>
