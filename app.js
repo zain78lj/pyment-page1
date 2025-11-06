@@ -57,33 +57,42 @@ document.addEventListener('DOMContentLoaded', () => {
   sendBtn.textContent =$ `المجموع: ${total.toLocaleString()} د.ع — إرسال الطلب عبر واتساب 📱`;
 }
 
-  // --- إرسال الطلب عبر واتساب ---
-  sendBtn.addEventListener('click', () => {
-    if (cart.size === 0) {
-      alert('الرجاء اختيار الأكلات أولاً');
-      return;
-    }
+ // --- إرسال الطلب عبر واتساب ---
+sendBtn.addEventListener('click', () => {
+  if (cart.size === 0) {
+    alert('الرجاء اختيار الأكلات أولاً');
+    return;
+  }
 
-    let message = 'طلب جديد من مشويات وأجنحة أبو رحمة:\n\n';
-    let total = 0;
+  let message = 'طلب جديد من مشويات وأجنحة أبو رحمة:\n\n';
+  let total = 0;
 
-    for (const [name, info] of cart.entries()) {
-      message += `- ${name} ×${info.qty}\n;
-      total += info.price * info.qty`;
-    }
+  for (const [name, info] of cart.entries()) {
+    message += `- ${name} ×${info.qty}\n`;
+    total += info.price * info.qty;
+  }
 
-    message += `\nالمجموع: ${total.toLocaleString()} د.ع\n`;
+  message += `\nالمجموع: ${total.toLocaleString()} د.ع\n`;
 
-    const phoneCustomer = (customerPhone && customerPhone.value.trim())
-      ? `\nهاتف الزبون: ${customerPhone.value.trim()}\n`
-      : '\n';
-    message += phoneCustomer;
-    message +=` \nالعنوان:\nملاحظات:`;
+  const phoneCustomer = (customerPhone && customerPhone.value.trim())
+    ?`\nهاتف الزبون: ${customerPhone.value.trim()}\n`
+    : '\n';
 
-    const phoneTarget = '9647774889440'; 
-    const url = `whatsapp://send?phone=${phoneTarget}?text=${encodeURIComponent(message)}`;
-    window.location.href=url;
-  });
+  message += phoneCustomer;
+  message += `\nالعنوان:\nملاحظات:\n`;
+
+  const phoneTarget = '9647774889440'; // رقم المطعم بدون +
+  const encodedMessage = encodeURIComponent(message);
+
+  // يفتح تطبيق واتساب مباشرة، وإذا ما نجح يفتح واتساب ويب
+  const appURL = `whatsapp://send?phone=${phoneTarget}&text=${encodedMessage}`;
+  const webURL = `https://wa.me/${phoneTarget}?text=${encodedMessage}`;
+
+  window.location.href = appURL;
+  setTimeout(() => {
+    window.open(webURL, '_blank');
+  }, 1500);
+});
 
   // --- التنقل بين الأقسام ---
   window.scrollToSection = function (id) {
