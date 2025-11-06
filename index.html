@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>مشويات وأجنحة أبو رحمة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside aria-label="القائمة الجانبية">
+    <h2>قائمة الطعام</h2>
+    <button onclick="scrollToSection('اللحوم')">🥩 اللحوم</button>
+    <button onclick="scrollToSection('الدجاج')">🍗 الدجاج</button>
+    <button onclick="scrollToSection('الأجنحة')">🍖 الأجنحة</button>
+    <button onclick="scrollToSection('الصواني')">🍲 الصواني</button>
+    <button onclick="scrollToSection('العروض')">🎁 العروض</button>
+    <button onclick="scrollToSection('المقبلات')">🥗 المقبلات</button>
+    <button onclick="scrollToSection('المشروبات')">🥤 المشروبات</button>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+    <header>
+      <div class="brand">
+        <div class="logo">أ</div>
+        <div>
+          <h1>مشويات وأجنحة أبو رحمة</h1>
+          <div class="header-sub">الدورة - شارع الصحة مجاور بيبي لاند</div>
+        </div>
+      </div>
+      <div class="controls">
+        <!-- small input for customer's phone (optional) -->
+        <input id="customerPhone" type="tel" placeholder="رقم الموبايل (اختياري)" style="padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:#0b0b0b;color:var(--white)">
+      </div>
+    </header>
+
+    <!-- sticker row (mobile) -->
+    <div class="sticker-row" id="stickerRow">
+      <button onclick="scrollToSection('اللحوم')">🥩 اللحوم</button>
+      <button onclick="scrollToSection('الدجاج')">🍗 الدجاج</button>
+      <button onclick="scrollToSection('الأجنحة')">🍖 الأجنحة</button>
+      <button onclick="scrollToSection('الصواني')">🍲 الصواني</button>
+      <button onclick="scrollToSection('العروض')">🎁 العروض</button>
+      <button onclick="scrollToSection('المقبلات')">🥗 المقبلات</button>
+      <button onclick="scrollToSection('المشروبات')">🥤 المشروبات</button>
+    </div>
+
+    <div class="search-box">
+      <input id="searchInput" type="text" placeholder="ابحث عن أكلة...">
+    </div>
+
+    <!-- ====== MENU (HTML items static) ====== -->
+
+    <!-- الأجنحة -->
+    <section class="menu-section" id="الأجنحة" data-section="الأجنحة">
+      <h2>الأجنحة 🍖</h2>
+      <div class="menu-grid">
+        <div class="card item" data-name="شيش أجنحة" data-price="3000" data-img="https://images.unsplash.com/photo-1607300558486-41aef7a9a6e8?auto=format&fit=crop&w=800&q=80">
+          <div class="card-top"><img loading="lazy" alt="شيش أجنحة" src="https://images.unsplash.com/photo-1607300558486-41aef7a9a6e8?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">شيش أجنحة</div>
+            <div class="card-price">3000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="شيش أجنحة مع أرز" data-price="4000" data-img="https://images.unsplash.com/photo-1606755962773-0bcd1f53b4fe?auto=format&fit=crop&w=800&q=80">
+          <div class="card-top"><img loading="lazy" alt="شيش أجنحة مع أرز" src="https://images.unsplash.com/photo-1606755962773-0bcd1f53b4fe?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">شيش أجنحة مع أرز</div>
+            <div class="card-price">4000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="نصف نفر أجنحة" data-price="6000" data-img="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80">
+          <div class="card-top"><img loading="lazy" alt="نصف نفر أجنحة" src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">نصف نفر أجنحة</div>
+            <div class="card-price">6000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="نصف نفر أجنحة مع أرز" data-price="7000" data-img="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=800&q=80">
+          <div class="card-top"><img loading="lazy" alt="نصف نفر أجنحة مع أرز" src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">نصف نفر أجنحة مع أرز</div>
+            <div class="card-price">7000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="نفر أجنحة" data-price="12000" data-img="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80">
+          <div class="card-top"><img loading="lazy" alt="نفر أجنحة" src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">نفر أجنحة</div>
+            <div class="card-price">12000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="نفر أجنحة مع أرز" data-price="14000" data-img="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=800&q=80">
+          <div class="card-top"><img loading="lazy" alt="نفر أجنحة مع أرز" src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">نفر أجنحة مع أرز</div>
+            <div class="card-price">14000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- الدجاج -->
+    <section class="menu-section" id="الدجاج" data-section="الدجاج">
+      <h2>الدجاج 🍗</h2>
+      <div class="menu-grid">
+        <div class="card item" data-name="دجاجة كاملة على الفحم" data-price="15000" data-img="https://images.unsplash.com/photo-1604908177522-04047ec2b4a7?auto=format&fit=crop&w=800&q=80">
+          <div class="card-top"><img loading="lazy" alt="دجاجة كاملة" src="https://images.unsplash.com/photo-1604908177522-04047ec2b4a7?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">دجاجة كاملة على الفحم</div>
+            <div class="card-price">15000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="نصف دجاجة" data-price="8000" data-img="https://images.unsplash.com/photo-1608032077018-b63f14d0b2ed?auto=format&fit=crop&w=800&q=80">
+          <div class="card-top"><img loading="lazy" alt="نصف دجاجة" src="https://images.unsplash.com/photo-1608032077018-b63f14d0b2ed?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">نصف دجاجة</div>
+            <div class="card-price">8000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- تكة دجاجات واخرى مختصرة -->
+        <div class="card item" data-name="تكة دجاج — شيش" data-price="3000" data-img="https://images.unsplash.com/photo-1599125098123-6b1b33b92e09?auto=format&fit=crop&w=800&q=80">
+          <div class="card-top"><img loading="lazy" alt="تكة دجاج" src="https://images.unsplash.com/photo-1599125098123-6b1b33b92e09?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">تكة دجاج — شيش</div>
+            <div class="card-price">3000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="تكة دجاج — شيش مع أرز" data-price="4000" data-img="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=800&q=80">
+          <div class="card-top"><img loading="lazy" alt="تكة دجاج مع ارز" src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">تكة دجاج — شيش مع أرز</div>
+            <div class="card-price">4000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="تكة دجاج — نص نفر" data-price="5000" data-img="https://images.unsplash.com/photo-1617196034796-73dfa1c4e4c2?auto=format&fit=crop&w=800&q=80">
+          <div class="card-top"><img loading="lazy" alt="تكة دجاج نص" src="https://images.unsplash.com/photo-1617196034796-73dfa1c4e4c2?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">تكة دجاج — نص نفر</div>
+            <div class="card-price">5000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="نفر تكة دجاج" data-price="10000" data-img="https://images.unsplash.com/photo-1606755962773-0bcd1f53b4fe?auto=format&fit=crop&w=800&q=80">
+          <div class="card-top"><img loading="lazy" alt="نفر تكة دجاج" src="https://images.unsplash.com/photo-1606755962773-0bcd1f53b4fe?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">نفر تكة دجاج</div>
+            <div class="card-price">10000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- اللحوم -->
+    <section class="menu-section" id="اللحوم" data-section="اللحوم">
+      <h2>اللحوم 🥩</h2>
+      <div class="menu-grid">
+        <div class="card item" data-name="تكة لحم — نفر" data-price="14000" data-img="https://images.unsplash.com/photo-1601924638867-3ecb3c3d495b?auto=format&fit=crop&w=800&q=80">
+          <div class="card-top"><img loading="lazy" alt="تكة لحم" src="https://images.unsplash.com/photo-1601924638867-3ecb3c3d495b?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">تكة لحم — نفر</div>
+            <div class="card-price">14000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="تكة لحم — نص" data-price="7000" data-img="https://images.unsplash.com/photo-1601924638867-3ecb3c3d495b?auto=format&fit=crop&w=800&q=80">
+          <div class="card-top"><img loading="lazy" alt="تكة لحم نص" src="https://images.unsplash.com/photo-1601924638867-3ecb3c3d495b?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">تكة لحم — نص</div>
+            <div class="card-price">7000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="تكة لحم — شيش" data-price="3500" data-img="https://images.unsplash.com/photo-1593032465171-cfd2a8b1a5b0?auto=format&fit=crop&w=800&q=80">
+          <div class="card-top"><img loading="lazy" alt="تكة لحم شيش" src="https://images.unsplash.com/photo-1593032465171-cfd2a8b1a5b0?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">تكة لحم — شيش</div>
+            <div class="card-price">3500 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="معلاك — نفر" data-price="14000" data-img="https://images.unsplash.com/photo-1543353071-087092ec3933?auto=format&fit=crop&w=800&q=80">
+          <div class="card-top"><img loading="lazy" alt="معلاك" src="https://images.unsplash.com/photo-1543353071-087092ec3933?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">معلاك — نفر</div>
+            <div class="card-price">14000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="ضلوع لحم — نفر" data-price="18000" data-img="https://images.unsplash.com/photo-1600891963933-35c2f1f2df94?auto=format&fit=crop&w=800&q=80">
+          <div class="card-top"><img loading="lazy" alt="ضلوع" src="https://images.unsplash.com/photo-1600891963933-35c2f1f2df94?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">ضلوع لحم — نفر</div>
+            <div class="card-price">18000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="عرايس لحم (8 قطع)" data-price="12000" data-img="https://images.unsplash.com/photo-1559163499-413811fb2344?auto=format&fit=crop&w=800&q=80">
+          <div class="card-top"><img loading="lazy" alt="عرايس" src="https://images.unsplash.com/photo-1559163499-413811fb2344?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">عرايس لحم (8 قطع)</div>
+            <div class="card-price">12000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- الصواني -->
+    <section class="menu-section" id="الصواني" data-section="الصواني">
+      <h2>الصواني 🍲</h2>
+      <div class="menu-grid">
+        <div class="card item" data-name="ملفوف لحم — شيش" data-price="6000" data-img="">
+          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">ملفوف لحم — شيش</div>
+            <div class="card-price">6000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="ملفوف لحم — نص" data-price="12000" data-img="">
+          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">ملفوف لحم — نص</div>
+            <div class="card-price">12000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="ملفوف لحم — نفر" data-price="25000" data-img="">
+          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">ملفوف لحم — نفر</div>
+            <div class="card-price">25000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="بقلاوة لحم — شيش" data-price="6000" data-img="">
+          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">بقلاوة لحم — شيش</div>
+            <div class="card-price">6000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="بقلاوة لحم — نص" data-price="12000" data-img="">
+          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">بقلاوة لحم — نص</div>
+            <div class="card-price">12000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="بقلاوة لحم — نفر" data-price="25000" data-img="">
+          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">بقلاوة لحم — نفر</div>
+            <div class="card-price">25000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- العروض (أرز ومقبلات) -->
+    <section class="menu-section" id="العروض" data-section="العروض">
+      <h2>المقبلات والأرز 🍚🥗</h2>
+      <div class="menu-grid">
+        <div class="card item" data-name="أرز أحمر — معون صغير" data-price="1000">
+          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">أرز أحمر — معون صغير</div>
+            <div class="card-price">1000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="أرز أحمر — معون كبير" data-price="2000">
+          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">أرز أحمر — معون كبير</div>
+            <div class="card-price">2000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="مقبلات — صغير" data-price="1000">
+          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">مقبلات — صغير</div>
+            <div class="card-price">1000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="مقبلات — وسط" data-price="3000">
+          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">مقبلات — وسط</div>
+            <div class="card-price">3000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="مقبلات — كبير" data-price="4000">
+          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">مقبلات — كبير</div>
+            <div class="card-price">4000 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- المشروبات -->
+    <section class="menu-section" id="المشروبات" data-section="المشروبات">
+      <h2>المشروبات 🥤</h2>
+      <div class="menu-grid">
+        <div class="card item" data-name="بيبسي" data-price="500">
+          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">بيبسي</div>
+            <div class="card-price">500 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="ميرندا" data-price="500">
+          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">ميرندا</div>
+            <div class="card-price">500 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="سفن أب" data-price="500">
+          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">سفن أب</div>
+            <div class="card-price">500 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card item" data-name="لبن" data-price="500">
+          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
+          <div class="card-body">
+            <div class="card-title">لبن</div>
+            <div class="card-price">500 د.ع</div>
+            <div class="card-controls">
+              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
+              <button class="addBtn primary">إضافة</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CART BAR -->
+  <div class="cart-bar" role="status" aria-live="polite">
+    <div class="cart-text" id="cartText">لم يتم اختيار شيء بعد</div>
+    <div style="display:flex;gap:8px;align-items:center">
+      <button class="sendBtn" id="sendBtn">المجموع: 0 د.ع — إرسال الطلب عبر واتساب 📱</button>
+    </div>
+  </div>
+
+  <!-- TO TOP -->
+  <button class="toTop" id="toTop" title="الرجوع للأعلى">↑</button>
+
+
+
+  <script src="app.js" defer></script>
+</body>
+</html>
