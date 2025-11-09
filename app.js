@@ -38,7 +38,52 @@ document.addEventListener('DOMContentLoaded', () => {
       updateCartBar();
     });
   });
+document.querySelectorAll('.card').forEach(card => {
+  const addBtn = card.querySelector('.addBtn');
+  const plusBtn = card.querySelector('.qtyBtn.plus');
+  const minusBtn = card.querySelector('.qtyBtn.minus');
+  const qtyDisplay = card.querySelector('.qtyDisplay');
 
+  // إزالة أي مستمع قديم لمنع التكرار
+  const newPlus = plusBtn.cloneNode(true);
+  plusBtn.parentNode.replaceChild(newPlus, plusBtn);
+  const newMinus = minusBtn.cloneNode(true);
+  minusBtn.parentNode.replaceChild(newMinus, minusBtn);
+
+  // تحديث المراجع بعد الاستبدال
+  const plus = card.querySelector('.qtyBtn.plus');
+  const minus = card.querySelector('.qtyBtn.minus');
+
+  // زيادة واحدة فقط
+  plus.addEventListener('click', () => {
+    let qty = parseInt(qtyDisplay.textContent || "0", 10);
+    qty = qty + 1;
+    qtyDisplay.textContent = qty;
+  });
+
+  // إنقاص
+  minus.addEventListener('click', () => {
+    let qty = parseInt(qtyDisplay.textContent || "0", 10);
+    if (qty > 0) qty -= 1;
+    qtyDisplay.textContent = qty;
+    if (qty === 0) {
+      addBtn.classList.remove('added');
+      addBtn.textContent = 'إضافة';
+    }
+  });
+
+  // زر الإضافة
+  addBtn.addEventListener('click', () => {
+    const qty = parseInt(qtyDisplay.textContent || "0", 10);
+    if (qty < 1) {
+      addBtn.classList.add('shake');
+      setTimeout(() => addBtn.classList.remove('shake'), 400);
+      return;
+    }
+    addBtn.classList.add('added');
+    addBtn.textContent = '✅ تمت الإضافة';
+  });
+});
   function updateCartBar() {
   if (cart.size === 0) {
     cartText.textContent = 'لم يتم اختيار شيء بعد';
