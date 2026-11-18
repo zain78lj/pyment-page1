@@ -1,449 +1,284 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>مشويات وأجنحة أبو رحمة</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#063b49">
+  <meta name="description" content="ZainNet - خدمات الإنترنت، الاشتراكات، الصيانة، البرامج والتسديد الإلكتروني.">
+  <title>ZainNet | خدمات الإنترنت</title>
+  <style>
+    :root{
+      --navy:#062f3b; --teal:#079da5; --cyan:#20c6ce; --ink:#102d3b;
+      --muted:#647987; --paper:#f3f9fc; --white:#fff; --pink:#f43f70;
+      --line:#dcebf0; --shadow:0 18px 48px rgba(4,54,69,.10);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.8}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .container{width:min(1160px,92%);margin:auto}
+    .topline{height:6px;background:linear-gradient(90deg,var(--navy),var(--teal),var(--cyan))}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:29px;letter-spacing:-1px;color:var(--navy)}
+    .brand-mark{width:46px;height:46px;border-radius:15px;background:linear-gradient(145deg,var(--teal),var(--navy));display:grid;place-items:center;color:white;font-size:25px;box-shadow:0 8px 18px #079da544}
+    .brand span span{color:var(--teal)}
+    .navlinks{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:700;color:#355261}
+    .navlinks a:hover{color:var(--teal)}
+    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:14px;padding:12px 19px;font-weight:800;cursor:pointer;transition:.2s}
+    .nav-cta,.btn-primary{background:linear-gradient(135deg,var(--teal),#087b8b);color:#fff;box-shadow:0 9px 22px #078c9a33}
+    .btn:hover,.nav-cta:hover{transform:translateY(-2px)}
+    .menu-btn{display:none;background:#e8f5f7;border:0;border-radius:12px;padding:10px 13px;color:var(--navy);font-size:22px}
+    .hero{position:relative;overflow:hidden;padding:75px 0 65px;background:linear-gradient(120deg,#eaf7fb 0%,#fff 52%,#e3f6f7 100%)}
+    .hero:before,.hero:after{content:"";position:absolute;border-radius:50%;filter:blur(1px);pointer-events:none}
+    .hero:before{width:430px;height:430px;background:#18b9c41b;top:-220px;left:-90px}
+    .hero:after{width:330px;height:330px;background:#063b3b12;bottom:-220px;right:-80px}
+    .hero-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:45px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;background:#dff5f5;color:#087f89;border:1px solid #b9e9e9;padding:7px 13px;border-radius:50px;font-size:13px;font-weight:800}
+    h1{font-size:clamp(43px,6vw,70px);line-height:1.12;margin:17px 0 8px;color:var(--navy);letter-spacing:-2px}
+    h1 span{color:var(--teal)}
+    .hero-sub{font-size:20px;font-weight:800;color:#244b5a;margin:0 0 13px}
+    .hero p{color:var(--muted);max-width:590px;margin:0 0 24px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn-outline{border:1px solid #9acbd1;color:var(--navy);background:white}
+    .hero-art{background:linear-gradient(145deg,#063541,#087f8a);padding:30px;border-radius:34px;color:white;box-shadow:0 25px 60px #063b3b30;position:relative;min-height:300px;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+    .hero-art:after{content:"";position:absolute;width:260px;height:260px;border:1px solid #ffffff28;border-radius:50%;left:-80px;top:-80px;box-shadow:0 0 0 35px #ffffff0b,0 0 0 70px #ffffff08}
+    .wifi{font-size:64px;line-height:1;color:#5de4e4;margin-bottom:12px}
+    .hero-art strong{font-size:27px;position:relative;z-index:1}
+    .hero-art small{color:#d0eef0;font-size:15px;position:relative;z-index:1}
+    .offer{position:relative;z-index:2;margin-top:22px;background:var(--pink);border-radius:16px;padding:13px 17px;font-weight:900;font-size:20px;box-shadow:0 9px 22px #f43f7040}
+    .offer b{font-size:31px;color:#fff3a1}
+    section{padding:76px 0}
+    .section-head{text-align:center;margin-bottom:35px}
+    .section-head .tag{color:var(--teal);font-weight:900;font-size:13px}
+    .section-head h2{margin:5px 0;font-size:clamp(27px,4vw,38px);color:var(--navy)}
+    .section-head p{margin:0;color:var(--muted)}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service,.price-card,.panel{background:white;border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:var(--shadow)}
+    .service-icon{width:53px;height:53px;border-radius:16px;display:grid;place-items:center;background:#e6f7f7;color:#078b94;font-size:26px;margin-bottom:14px}
+    .service h3{margin:0 0 5px;color:var(--navy)}
+    .service p{margin:0;color:var(--muted);font-size:14px}
+    #prices{background:#eaf4f7}
+    .prices-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:13px;align-items:stretch}
+    .price-card{text-align:center;padding:23px 14px;position:relative}
+    .price-card.featured{border:2px solid var(--teal);transform:translateY(-8px)}
+    .popular{position:absolute;top:-14px;right:50%;transform:translateX(50%);white-space:nowrap;background:var(--teal);color:white;padding:3px 13px;border-radius:30px;font-size:11px;font-weight:900}
+    .price-card h3{margin:8px 0;color:var(--navy);font-size:18px}
+    .price{font-size:36px;line-height:1.3;font-weight:900;color:var(--teal)}
+    .price small{font-size:13px;color:var(--muted)}
+    .price-card p{font-size:12px;color:var(--muted);min-height:42px}
+    .price-card .btn{width:100%;padding:10px 7px;font-size:13px}
+    .new-offer{margin-top:28px;background:linear-gradient(110deg,#062f3b,#087f8a);border-radius:24px;padding:25px 30px;color:white;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .new-offer h3{margin:0;font-size:24px}.new-offer p{margin:3px 0 0;color:#d3eef0}
+    .new-offer .btn{background:#fff;color:var(--navy);white-space:nowrap}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .panel h3{margin:0 0 12px;color:var(--navy);font-size:22px}
+    .program-list{display:grid;gap:12px}
+    .program{border:1px solid var(--line);border-radius:16px;padding:15px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .program strong{display:block;color:var(--navy)}
+    .program small{color:var(--muted)}
+    .program .btn{padding:9px 13px;font-size:13px;white-space:nowrap}
+    .credentials{margin-top:15px;background:#f0f8fa;border:1px dashed #9bcbd0;padding:15px;border-radius:15px;font-size:14px}
+    .credentials div{display:flex;justify-content:space-between;gap:10px;padding:4px 0}
+    .credentials code{font-family:Arial,sans-serif;font-weight:bold;color:#087f89;direction:ltr}
+    .note{font-size:12px;color:#a24b2a;margin-top:10px}
+    .join-box{background:linear-gradient(135deg,#e7f7f8,#fff);border:1px solid #cce9eb;border-radius:24px;padding:28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .join-box h3{margin:0;color:var(--navy);font-size:23px}.join-box p{margin:4px 0;color:var(--muted)}
+    .join-box .btn{white-space:nowrap}
+    .pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .pay-card{background:white;border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 145px;gap:15px;align-items:center}
+    .pay-card h3{margin:0 0 5px;color:var(--navy)}
+    .pay-number{font-size:21px;font-weight:900;color:var(--teal);direction:ltr;text-align:right}
+    .qr-placeholder{width:140px;height:140px;border:2px dashed #8bbdc4;border-radius:15px;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;background:repeating-linear-gradient(45deg,#f5fbfc,#f5fbfc 7px,#edf6f8 7px,#edf6f8 14px);color:#54747c;font-size:12px;font-weight:700}
+    .pay-card .btn{padding:9px 12px;font-size:13px;margin-top:10px}
+    .contact{background:var(--navy);color:white}
+    .contact .section-head h2{color:white}.contact .section-head p{color:#c5dce0}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .contact-item{background:#ffffff0d;border:1px solid #ffffff20;border-radius:18px;padding:22px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+    .contact-item span{color:#bde7e9;font-size:13px}.contact-item strong{display:block;font-size:21px;direction:ltr}
+    .contact-item .btn{background:#16a7a4;color:white}
+    footer{background:#042630;color:#c5dce0;padding:24px 0;text-align:center;font-size:13px}
+    .toast{position:fixed;bottom:20px;left:20px;background:#063b49;color:white;padding:12px 18px;border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(15px);transition:.25s;z-index:50;pointer-events:none}
+    .toast.show{opacity:1;transform:translateY(0)}
+    @media(max-width:900px){
+      .navlinks{display:none;position:absolute;top:78px;right:4%;left:4%;background:white;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch}
+      .navlinks.open{display:flex}.menu-btn{display:block}.nav-cta{display:none}
+      .hero-grid{grid-template-columns:1fr}.hero-art{min-height:230px}
+      .prices-grid{grid-template-columns:repeat(3,1fr)}
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:600px){
+      .nav{height:68px}.brand{font-size:24px}.brand-mark{width:40px;height:40px}
+      .navlinks{top:68px}.hero{padding:52px 0}.hero-sub{font-size:17px}
+      .hero-art{padding:23px;min-height:220px}.offer{font-size:17px}.offer b{font-size:25px}
+      section{padding:55px 0}.services-grid,.two-col,.pay-grid,.contact-grid{grid-template-columns:1fr}
+      .prices-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+      .price-card{padding:19px 10px}.price{font-size:31px}
+      .price-card.featured{transform:none}
+      .new-offer,.join-box{align-items:flex-start;flex-direction:column;padding:22px}
+      .new-offer h3{font-size:20px}
+      .pay-card{grid-template-columns:1fr 112px;padding:17px;gap:10px}
+      .qr-placeholder{width:108px;height:108px;font-size:10px}
+      .pay-number{font-size:18px}
+      .program{align-items:flex-start;flex-direction:column}
+      .contact-item strong{font-size:18px}
+    }
+  </style>
 </head>
 <body>
+  <div class="topline"></div>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home"><span class="brand-mark">⌁</span><span>Zain<span>Net</span></span></a>
+      <nav class="navlinks" id="navlinks">
+        <a href="#home">الرئيسية</a><a href="#services">خدماتنا</a><a href="#prices">أسعار الاشتراكات</a>
+        <a href="#programs">البرامج</a><a href="#payments">التسديد الإلكتروني</a><a href="#contact">اتصل بنا</a>
+      </nav>
+      <a class="nav-cta" href="https://wa.me/9647721372326" target="_blank" rel="noopener">اشترك الآن</a>
+      <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+    </div>
+  </header>
 
-  <!-- SIDEBAR -->
-  <aside aria-label="القائمة الجانبية">
-    <h2>قائمة الطعام</h2>
-    <button onclick="scrollToSection('اللحوم')">🥩 اللحوم</button>
-    <button onclick="scrollToSection('الدجاج')">🍗 الدجاج</button>
-    <button onclick="scrollToSection('الأجنحة')">🍖 الأجنحة</button>
-    <button onclick="scrollToSection('الصواني')">🍲 الصواني</button>
-    <button onclick="scrollToSection('الأرز')">🍚 الأرز</button>
-    <button onclick="scrollToSection('المشروبات')">🥤 المشروبات</button>
-  </aside>
-
-  <!-- MAIN -->
   <main>
-    <header>
-      <div class="brand">
-        <div class="logo">أ</div>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
         <div>
-          <h1>مشويات وأجنحة أبو رحمة</h1>
-          <div class="header-sub">الدورة - شارع الصحة مجاور بيبي لاند</div>
-        </div>
-      </div>
-      <div class="controls">
-        <!-- small input for customer's phone (optional) -->
-        <input id="customerPhone" type="tel" placeholder="رقم الموبايل (اختياري)" style="padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:#0b0b0b;color:var(--white)">
-      </div>
-    </header>
-
-    <!-- sticker row (mobile) -->
-    <div class="sticker-row" id="stickerRow">
-      <button onclick="scrollToSection('اللحوم')">🥩 اللحوم</button>
-      <button onclick="scrollToSection('الدجاج')">🍗 الدجاج</button>
-      <button onclick="scrollToSection('الأجنحة')">🍖 الأجنحة</button>
-      <button onclick="scrollToSection('الصواني')">🍲 الصواني</button>
-      <button onclick="scrollToSection('الأرز')">🍚 الأرز</button>
-      <button onclick="scrollToSection('المشروبات')">🥤 المشروبات</button>
-    </div>
-
-    <div class="search-box">
-      <input id="searchInput" type="text" placeholder="ابحث عن أكلة...">
-    </div>
-
-    <!-- ====== MENU (HTML items static) ====== -->
-
-    <!-- الأجنحة -->
-    <section class="menu-section" id="الأجنحة" data-section="الأجنحة">
-      <h2>الأجنحة 🍖</h2>
-      <div class="menu-grid">
-        <div class="card item" data-name="شيش أجنحة" data-price="3000" data-img="https://images.unsplash.com/photo-1607300558486-41aef7a9a6e8?auto=format&fit=crop&w=800&q=80">
-          <div class="card-top"><img src="PIC/AJnha.jpeg" alt="شيش أجنحة"></div>
-          <div class="card-body">
-            <div class="card-title">شيش أجنحة</div>
-            <div class="card-price">3000 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
+          <span class="eyebrow">● منصة ZainNet لخدمات الإنترنت</span>
+          <h1>Zain<span>Net</span></h1>
+          <div class="hero-sub">خدمات الإنترنت والاتصالات بأفضل جودة</div>
+          <p>نوفر لكم خدمة إنترنت، صيانة، تشغيل القنوات الرياضية والفيديو، وبرامج المشاهدة. تابعوا أخبار الشبكة والعروض من خلال موقعنا.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/9647721372326" target="_blank" rel="noopener">تواصل واشترك عبر واتساب</a>
+            <a class="btn btn-outline" href="#prices">شاهد الأسعار</a>
           </div>
         </div>
-
-        <div class="card item" data-name="نصف نفر أجنحة" data-price="6000" data-img="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80">
-          <div class="card-top"><div class="card-top"><img src="PIC/AJnha.jpeg" alt="نص أجنحة"></div>
-</div>
-          <div class="card-body">
-            <div class="card-title">نصف نفر أجنحة</div>
-            <div class="card-price">6000 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
-          </div>
+        <div class="hero-art">
+          <div class="wifi">⌁</div>
+          <strong>إنترنت أسرع… تواصل أسهل</strong>
+          <small>خدمة الإنترنت • الصيانة • البرامج</small>
+          <div class="offer">عرض خاص للمشتركين الجدد<br><b>20 ألف دينار</b> للاشتراك الأول</div>
         </div>
-
-        <div class="card item" data-name="نفر أجنحة" data-price="12000" data-img="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80">
-          <div class="card-top"><img loading="lazy" alt="نفر أجنحة" src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">نفر أجنحة</div>
-            <div class="card-price">12000 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
 
-    <!-- الدجاج -->
-    <section class="menu-section" id="الدجاج" data-section="الدجاج">
-      <h2>الدجاج 🍗</h2>
-      <div class="menu-grid">
-        <div class="card item" data-name="دجاجة كاملة على الفحم" data-price="15000" data-img="https://images.unsplash.com/photo-1604908177522-04047ec2b4a7?auto=format&fit=crop&w=800&q=80">
-          <div class="card-top"><img loading="lazy" alt="دجاجة كاملة" src="https://images.unsplash.com/photo-1604908177522-04047ec2b4a7?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">دجاجة كاملة على الفحم</div>
-            <div class="card-price">15000 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
+    <section id="services">
+      <div class="container">
+        <div class="section-head"><span class="tag">ماذا نقدم؟</span><h2>خدمات ZainNet</h2><p>كل ما تحتاجه لخدمة الإنترنت في مكان واحد</p></div>
+        <div class="services-grid">
+          <article class="service"><div class="service-icon">⚡</div><h3>خدمة فائقة السرعة</h3><p>باقات إنترنت متعددة لتختار السرعة المناسبة لاستخدامك.</p></article>
+          <article class="service"><div class="service-icon">🛠️</div><h3>قسم الصيانة</h3><p>للاستفسار عن الأعطال أو طلب المساعدة الفنية، تواصل معنا مباشرة.</p><a class="btn btn-outline" style="margin-top:15px" href="https://wa.me/9647721372326?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%B5%D9%8A%D8%A7%D9%86%D8%A9" target="_blank" rel="noopener">طلب صيانة</a></article>
+          <article class="service"><div class="service-icon">📺</div><h3>القنوات الرياضية والفيديو</h3><p>روابط البرامج والتطبيقات الخاصة بالمشاهدة للأجهزة المختلفة.</p><a class="btn btn-outline" style="margin-top:15px" href="#programs">عرض البرامج</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="prices">
+      <div class="container">
+        <div class="section-head"><span class="tag">اختر الباقة المناسبة</span><h2>أسعار الاشتراكات</h2><p>الأسعار بالدينار العراقي — المبالغ بالآلاف</p></div>
+        <div class="prices-grid">
+          <article class="price-card"><h3>الاشتراك الأول</h3><div class="price">35 <small>ألف</small></div><p>باقة الإنترنت الأولى</p><a class="btn btn-primary" href="https://wa.me/9647721372326?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D8%A7%D9%84%D8%A3%D9%88%D9%84" target="_blank" rel="noopener">اشترك</a></article>
+          <article class="price-card"><h3>الاشتراك الثاني</h3><div class="price">50 <small>ألف</small></div><p>باقة الإنترنت الثانية</p><a class="btn btn-primary" href="https://wa.me/9647721372326?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A" target="_blank" rel="noopener">اشترك</a></article>
+          <article class="price-card featured"><span class="popular">الأكثر طلباً</span><h3>الاشتراك الثالث</h3><div class="price">70 <small>ألف</small></div><p>باقة الإنترنت الثالثة</p><a class="btn btn-primary" href="https://wa.me/9647721372326?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB" target="_blank" rel="noopener">اشترك</a></article>
+          <article class="price-card"><h3>الاشتراك الرابع</h3><div class="price">90 <small>ألف</small></div><p>باقة الإنترنت الرابعة</p><a class="btn btn-primary" href="https://wa.me/9647721372326?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9" target="_blank" rel="noopener">اشترك</a></article>
+          <article class="price-card"><h3>Business</h3><div class="price">120 <small>ألف</small></div><p>باقة الأعمال</p><a class="btn btn-primary" href="https://wa.me/9647721372326?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A8%D8%A7%D9%82%D8%A9%20Business" target="_blank" rel="noopener">اشترك</a></article>
+        </div>
+        <div class="new-offer">
+          <div><h3>🎉 عرض خاص للمشتركين الجدد</h3><p>سعر الاشتراك الأول للمشترك الجديد: <b>20 ألف دينار</b>.</p></div>
+          <a class="btn" href="https://wa.me/9647721372326?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D8%A9%20%D9%85%D9%86%20%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D9%85%D8%B4%D8%AA%D8%B1%D9%83%D9%8A%D9%86%20%D8%A7%D9%84%D8%AC%D8%AF%D8%AF" target="_blank" rel="noopener">احصل على العرض عبر واتساب ←</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="programs">
+      <div class="container">
+        <div class="section-head"><span class="tag">روابط التحميل والمشاهدة</span><h2>قسم البرامج</h2><p>اختر جهازك أو افتح المشاهدة من المتصفح</p></div>
+        <div class="two-col">
+          <div class="panel">
+            <h3>📱 تطبيق IPTV</h3>
+            <div class="program-list">
+              <div class="program"><div><strong>تطبيق الآيفون</strong><small>تحميل من App Store</small></div><a class="btn btn-primary" href="https://apps.apple.com/app/id1628995509" target="_blank" rel="noopener">تحميل iPhone</a></div>
+              <div class="program"><div><strong>تطبيق الأندرويد</strong><small>تحميل من Google Play</small></div><a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=iptvplayer.m3ustream" target="_blank" rel="noopener">تحميل Android</a></div>
+              <div class="program"><div><strong>ملف APK للأندرويد</strong><small>رابط تحميل مباشر</small></div><a class="btn btn-outline" href="https://vlue.tv/IPTV.apk" target="_blank" rel="noopener">تحميل APK</a></div>
+              <div class="program"><div><strong>تطبيق الشاشات الذكية</strong><small>Smart TV</small></div><a class="btn btn-outline" href="https://vlue.tv/IPTVSM.apk" target="_blank" rel="noopener">تحميل للشاشات</a></div>
             </div>
           </div>
-        </div>
-
-        <div class="card item" data-name="نصف دجاجة" data-price="8000" data-img="https://images.unsplash.com/photo-1608032077018-b63f14d0b2ed?auto=format&fit=crop&w=800&q=80">
-          <div class="card-top"><img loading="lazy" alt="نصف دجاجة" src="https://images.unsplash.com/photo-1608032077018-b63f14d0b2ed?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">نصف دجاجة</div>
-            <div class="card-price">8000 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
+          <div class="panel">
+            <h3>🌐 المشاهدة من المتصفح</h3>
+            <p style="color:var(--muted)">يمكنك فتح موقع Vlue مباشرة من المتصفح.</p>
+            <a class="btn btn-primary" href="https://vlue.tv/" target="_blank" rel="noopener">فتح Vlue من المتصفح</a>
+            <div class="credentials">
+              <strong>بيانات الدخول</strong>
+              <div><span>الاسم</span><code>Vlue</code></div>
+              <div><span>اسم المستخدم</span><code>11</code></div>
+              <div><span>كلمة المرور</span><code>11</code></div>
+              <div><span>الرابط</span><code>http://vlue.tv/</code></div>
             </div>
-          </div>
-        </div>
-
-        <!-- تكة دجاجات واخرى مختصرة -->
-        <div class="card item" data-name="تكة دجاج — شيش" data-price="3000" data-img="https://images.unsplash.com/photo-1599125098123-6b1b33b92e09?auto=format&fit=crop&w=800&q=80">
-          <div class="card-top"><img loading="lazy" alt="تكة دجاج" src="https://images.unsplash.com/photo-1599125098123-6b1b33b92e09?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">تكة دجاج — شيش</div>
-            <div class="card-price">3000 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card item" data-name="تكة دجاج — شيش مع أرز" data-price="4000" data-img="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=800&q=80">
-          <div class="card-top"><img loading="lazy" alt="تكة دجاج مع ارز" src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">تكة دجاج — شيش مع أرز</div>
-            <div class="card-price">4000 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card item" data-name="تكة دجاج — نص نفر" data-price="5000" data-img="https://images.unsplash.com/photo-1617196034796-73dfa1c4e4c2?auto=format&fit=crop&w=800&q=80">
-          <div class="card-top"><img loading="lazy" alt="تكة دجاج نص" src="https://images.unsplash.com/photo-1617196034796-73dfa1c4e4c2?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">تكة دجاج — نص نفر</div>
-            <div class="card-price">5000 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card item" data-name="نفر تكة دجاج" data-price="10000" data-img="https://images.unsplash.com/photo-1606755962773-0bcd1f53b4fe?auto=format&fit=crop&w=800&q=80">
-          <div class="card-top"><img loading="lazy" alt="نفر تكة دجاج" src="https://images.unsplash.com/photo-1606755962773-0bcd1f53b4fe?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">نفر تكة دجاج</div>
-            <div class="card-price">10000 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
+            <p class="note">ملاحظة: الرابط أعلاه مكتوب كما زودتنا به (http). افتحه بالضغط على الرابط، ولا تنسخه إذا كان النسخ يغيّر http إلى https.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- اللحوم -->
-    <section class="menu-section" id="اللحوم" data-section="اللحوم">
-      <h2>اللحوم 🥩</h2>
-      <div class="menu-grid">
-        <div class="card item" data-name="تكة لحم — نفر" data-price="14000" data-img="https://images.unsplash.com/photo-1601924638867-3ecb3c3d495b?auto=format&fit=crop&w=800&q=80">
-          <div class="card-top"><img loading="lazy" alt="تكة لحم" src="https://images.unsplash.com/photo-1601924638867-3ecb3c3d495b?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">تكة لحم — نفر</div>
-            <div class="card-price">14000 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card item" data-name="تكة لحم — نص" data-price="7000" data-img="https://images.unsplash.com/photo-1601924638867-3ecb3c3d495b?auto=format&fit=crop&w=800&q=80">
-          <div class="card-top"><img loading="lazy" alt="تكة لحم نص" src="https://images.unsplash.com/photo-1601924638867-3ecb3c3d495b?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">تكة لحم — نص</div>
-            <div class="card-price">7000 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card item" data-name="تكة لحم — شيش" data-price="3500" data-img="https://images.unsplash.com/photo-1593032465171-cfd2a8b1a5b0?auto=format&fit=crop&w=800&q=80">
-          <div class="card-top"><img loading="lazy" alt="تكة لحم شيش" src="https://images.unsplash.com/photo-1593032465171-cfd2a8b1a5b0?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">تكة لحم — شيش</div>
-            <div class="card-price">3500 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card item" data-name="معلاك — نفر" data-price="14000" data-img="https://images.unsplash.com/photo-1543353071-087092ec3933?auto=format&fit=crop&w=800&q=80">
-          <div class="card-top"><img loading="lazy" alt="معلاك" src="https://images.unsplash.com/photo-1543353071-087092ec3933?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">معلاك — نفر</div>
-            <div class="card-price">14000 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card item" data-name="ضلوع لحم — نفر" data-price="18000" data-img="https://images.unsplash.com/photo-1600891963933-35c2f1f2df94?auto=format&fit=crop&w=800&q=80">
-          <div class="card-top"><img loading="lazy" alt="ضلوع" src="https://images.unsplash.com/photo-1600891963933-35c2f1f2df94?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">ضلوع لحم — نفر</div>
-            <div class="card-price">18000 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card item" data-name="عرايس لحم (8 قطع)" data-price="12000" data-img="https://images.unsplash.com/photo-1559163499-413811fb2344?auto=format&fit=crop&w=800&q=80">
-          <div class="card-top"><img loading="lazy" alt="عرايس" src="https://images.unsplash.com/photo-1559163499-413811fb2344?auto=format&fit=crop&w=800&q=80" onerror="this.style.display='none';this.parentNode.querySelector('.placeholder').style.display='grid'"><div class="placeholder" style="display:none">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">عرايس لحم (8 قطع)</div>
-            <div class="card-price">12000 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
-          </div>
+    <section id="news" style="padding-top:0">
+      <div class="container">
+        <div class="join-box">
+          <div><h3>انضم إلى مجموعة ZainNet</h3><p>تابع أخبار الشبكة، التنبيهات، وأي مشكلة أو تحديث يخص الخدمة.</p></div>
+          <a class="btn btn-primary" href="https://chat.whatsapp.com/C2luhI6QVcDJEAThAFAOpb" target="_blank" rel="noopener">الانضمام إلى المجموعة</a>
         </div>
       </div>
     </section>
 
-    <!-- الصواني -->
-    <section class="menu-section" id="الصواني" data-section="الصواني">
-      <h2>الصواني 🍲</h2>
-      <div class="menu-grid">
-        <div class="card item" data-name="ملفوف لحم — شيش" data-price="6000" data-img="">
-          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">ملفوف لحم — شيش</div>
-            <div class="card-price">6000 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
-          </div>
+    <section id="payments" style="background:#eaf4f7">
+      <div class="container">
+        <div class="section-head"><span class="tag">طرق الدفع</span><h2>التسديد الإلكتروني</h2><p>اختر طريقة التسديد المناسبة، واحتفظ بإشعار التحويل</p></div>
+        <div class="pay-grid">
+          <article class="pay-card">
+            <div><h3>💳 Visa Card</h3><div class="pay-number">3919886154</div><p style="color:var(--muted);font-size:13px">رقم الفيزا للتسديد</p><button class="btn btn-primary" onclick="copyText('3919886154')">نسخ الرقم</button></div>
+            <div class="qr-placeholder">مكان باركود<br>Visa Card<br><small>أضف صورة QR هنا</small></div>
+          </article>
+          <article class="pay-card">
+            <div><h3>📲 Zain Cash</h3><div class="pay-number">07714064135</div><p style="color:var(--muted);font-size:13px">رقم زين كاش للتسديد</p><button class="btn btn-primary" onclick="copyText('07714064135')">نسخ الرقم</button></div>
+            <div class="qr-placeholder">مكان باركود<br>Zain Cash<br><small>أضف صورة QR هنا</small></div>
+          </article>
         </div>
-
-        <div class="card item" data-name="ملفوف لحم — نص" data-price="12000" data-img="">
-          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">ملفوف لحم — نص</div>
-            <div class="card-price">12000 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card item" data-name="ملفوف لحم — نفر" data-price="25000" data-img="">
-          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">ملفوف لحم — نفر</div>
-            <div class="card-price">25000 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card item" data-name="بقلاوة لحم — شيش" data-price="6000" data-img="">
-          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">بقلاوة لحم — شيش</div>
-            <div class="card-price">6000 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card item" data-name="بقلاوة لحم — نص" data-price="12000" data-img="">
-          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">بقلاوة لحم — نص</div>
-            <div class="card-price">12000 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card item" data-name="بقلاوة لحم — نفر" data-price="25000" data-img="">
-          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">بقلاوة لحم — نفر</div>
-            <div class="card-price">25000 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
-          </div>
-        </div>
+        <p style="text-align:center;color:#9a5638;font-size:13px;margin-top:17px">بعد إتمام التحويل، أرسل صورة الإشعار واسم المشترك إلى رقم التواصل للتأكد من التسديد.</p>
       </div>
     </section>
 
-    <!-- العروض (أرز ومقبلات) -->
-    <section class="menu-section" id="الأرز" data-section="الأرز">
-      <h2>الأرز 🍚</h2>
-      <div class="menu-grid">
-        <div class="card item" data-name="أرز أحمر — صحن صغير" data-price="1000">
-          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">أرز أحمر — صحن صغير</div>
-            <div class="card-price">1000 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
-          </div>
-        </div>
-
- <div class="card item" data-name="أرز أحمر — صحن وسط" data-price="2000">
-          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">أرز أحمر — صحن وسط</div>
-            <div class="card-price">2000 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="card item" data-name="أرز أحمر — صحن كبير" data-price="4000">
-          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">أرز أحمر — صحن كبير</div>
-            <div class="card-price">4000 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- المشروبات -->
-    <section class="menu-section" id="المشروبات" data-section="المشروبات">
-      <h2>المشروبات 🥤</h2>
-      <div class="menu-grid">
-        <div class="card item" data-name="بيبسي" data-price="500">
-          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">بيبسي</div>
-            <div class="card-price">500 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card item" data-name="ميرندا" data-price="500">
-          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">ميرندا</div>
-            <div class="card-price">500 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card item" data-name="سفن أب" data-price="500">
-          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">سفن أب</div>
-            <div class="card-price">500 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card item" data-name="لبن" data-price="500">
-          <div class="card-top"><div class="placeholder">صورة مؤقتة</div></div>
-          <div class="card-body">
-            <div class="card-title">لبن</div>
-            <div class="card-price">500 د.ع</div>
-            <div class="card-controls">
-              <div class="qtyBox"><button class="qtyBtn minus">−</button><div class="qtyDisplay">0</div><button class="qtyBtn plus">+</button></div>
-              <button class="addBtn primary">إضافة</button>
-            </div>
-          </div>
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-head"><span class="tag" style="color:#5de4e4">نحن بخدمتكم</span><h2>تواصل معنا</h2><p>للاشتراك أو الصيانة أو الاستفسار</p></div>
+        <div class="contact-grid">
+          <div class="contact-item"><div><span>رقم التواصل الأول</span><strong>0772 137 2326</strong></div><a class="btn" href="https://wa.me/9647721372326" target="_blank" rel="noopener">محادثة واتساب</a></div>
+          <div class="contact-item"><div><span>رقم التواصل الثاني / زين كاش</span><strong>0771 406 4135</strong></div><a class="btn" href="https://wa.me/9647714064135" target="_blank" rel="noopener">محادثة واتساب</a></div>
         </div>
       </div>
     </section>
-
   </main>
-
-  <!-- CART BAR -->
-  <div class="cart-bar" role="status" aria-live="polite">
-    <div class="cart-text" id="cartText">لم يتم اختيار شيء بعد</div>
-    <div style="display:flex;gap:8px;align-items:center">
-      <button class="sendBtn" id="sendBtn">المجموع: 0 د.ع — إرسال الطلب عبر واتساب 📱</button>
-    </div>
-  </div>
-
-  <!-- TO TOP -->
-  <button class="toTop" id="toTop" title="الرجوع للأعلى">↑</button>
-
-
-
-  <script src="app.js" defer></script>
+  <footer><div class="container">© <span id="year"></span> ZainNet — جميع الحقوق محفوظة</div></footer>
+  <div class="toast" id="toast">تم نسخ الرقم</div>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navlinks = document.getElementById('navlinks');
+    menuBtn.addEventListener('click', () => navlinks.classList.toggle('open'));
+    navlinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navlinks.classList.remove('open')));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function copyText(value) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(value).then(showToast).catch(() => fallbackCopy(value));
+      } else fallbackCopy(value);
+    }
+    function fallbackCopy(value) {
+      const el = document.createElement('textarea'); el.value = value;
+      document.body.appendChild(el); el.select();
+      try { document.execCommand('copy'); showToast(); } catch(e) { alert('انسخ الرقم: ' + value); }
+      el.remove();
+    }
+    function showToast() {
+      const toast = document.getElementById('toast'); toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 1800);
+    }
+  </script>
 </body>
 </html>
